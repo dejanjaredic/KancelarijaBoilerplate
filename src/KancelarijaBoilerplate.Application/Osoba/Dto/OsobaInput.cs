@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KancelarijaBoilerplate.Osoba
 {
-    class IOsobaServices
+    class OsobaInput
     {
         //proba
     }
