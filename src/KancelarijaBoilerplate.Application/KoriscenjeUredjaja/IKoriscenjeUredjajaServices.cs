@@ -6,5 +6,6 @@ namespace KancelarijaBoilerplate.KoriscenjeUredjaja
 {
     class IKoriscenjeUredjajaServices
     {
+        //proba
     }
 }

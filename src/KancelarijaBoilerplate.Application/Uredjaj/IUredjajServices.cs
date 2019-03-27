@@ -6,5 +6,6 @@ namespace KancelarijaBoilerplate.Uredjaj
 {
     class IUredjajServices
     {
+        //proba
     }
 }

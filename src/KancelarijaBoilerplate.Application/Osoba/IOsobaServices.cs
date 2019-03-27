@@ -6,5 +6,6 @@ namespace KancelarijaBoilerplate.Osoba
 {
     class IOsobaServices
     {
+        //proba
     }
 }
