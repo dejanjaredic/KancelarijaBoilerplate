@@ -25,6 +25,35 @@ namespace KancelarijaBoilerplate.Web.Startup
                         url: "Home/About",
                         icon: "fa fa-info"
                         )
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Uredjaj,
+                        L("Uredjaj"),
+                        url: "Uredjaj",
+                        icon: "fa fa-info"
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetAll,
+                        L("GetAll"),
+                        url: "Uredjaj/GetAll",
+                        icon: "fa fa-info"
+                    )
+                        ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetById,
+                        L("GetById"),
+                        url: "Uredjaj/GetById/1",
+                        icon: "fa fa-info"
+                    )
+                        ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.KreiranjeUredjaja,
+                        L("KreiranjeUredjaja"),
+                        url: "Uredjaj/KreiranjeUredjaja",
+                        icon: "fa fa-info"
+                    )
+                        )
+                        
                 );
         }
 

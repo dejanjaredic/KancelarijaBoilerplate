@@ -1,0 +1,21 @@
+﻿@model KancelarijaBoilerplate.Web.Views.CreateUredjajViewModel
+@{
+    ViewData["Title"] = "KreiranjeUredjaja";
+}
+
+<h2>KreiranjeUredjaja</h2>
+
+<h2>
+    @L("NewTask")
+</h2>
+
+<form method="post">
+
+    <div class="form-group">
+        <label for="Title">@L("Title")</label>
+        <input type="text" name="name" class="form-control"></input>
+    </div>
+
+    <button type="submit" class="btn btn-default">@L("Save")</button>
+
+</form>

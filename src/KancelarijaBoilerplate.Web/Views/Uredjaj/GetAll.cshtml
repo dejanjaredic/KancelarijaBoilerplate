@@ -1,0 +1,16 @@
+﻿@using KancelarijaBoilerplate.Web.Startup
+@model KancelarijaBoilerplate.Web.Views.UredjajViewMmodel
+
+
+@{
+    ViewBag.ActiveMenu = PageNames.GetAll;
+}
+
+@ViewData["Title"]
+
+@foreach (var ure in Model.Uredjaj)
+{
+<br />@ure.Name
+
+}
+

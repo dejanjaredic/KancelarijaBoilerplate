@@ -4,6 +4,7 @@ using Abp.Castle.Logging.Log4Net;
 using Abp.EntityFrameworkCore;
 using KancelarijaBoilerplate.EntityFrameworkCore;
 using Castle.Facilities.Logging;
+using KancelarijaBoilerplate.Uredjaj;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -52,7 +53,6 @@ namespace KancelarijaBoilerplate.Web.Startup
             }
 
             app.UseStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
