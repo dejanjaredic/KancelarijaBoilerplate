@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using Abp.Domain.Entities;
 
 namespace KancelarijaBoilerplate.Models
 {
-    public class Osoba
+    public class Osoba : Entity
     {
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public int KancelarijaId { get; set; }

@@ -1,14 +1,11 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using Abp.Domain.Entities;
 
 namespace KancelarijaBoilerplate.Kancelarija
 {
     [AutoMap(typeof(Models.Kancelarija))]
-    public class KancelarijaInput : EntityDto
+    public class KancelarijaDeleteDto : EntityDto
     {
-
-        public string Opis { get; set; }
-
-       // public List<Osoba> Osoba { get; set; } = new List<Osoba>();
     }
 }

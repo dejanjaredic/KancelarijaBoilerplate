@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using KancelarijaBoilerplate.Uredjaj;
+﻿using KancelarijaBoilerplate.Uredjaj;
 using KancelarijaBoilerplate.Uredjaj.Dto;
 using KancelarijaBoilerplate.Web.Views;
 
@@ -15,29 +11,30 @@ namespace KancelarijaBoilerplate.Web.Controllers
     public class UredjajController : KancelarijaBoilerplateControllerBase
     {
         private readonly IUredjajService _uredjajService;
-
         public UredjajController(IUredjajService uredjajService)
         {
             _uredjajService = uredjajService;
         }
-        
+
 
         public IActionResult GetAll()
         {
-            var output =  _uredjajService.GetAll();
+            var output = _uredjajService.GetAll();
             var model = new UredjajViewMmodel(output);
             return View(model);
         }
-
-        // GET api/<controller>/5
-        public IActionResult GetById(int id)
+        [HttpGet]
+        public IActionResult GetById(int? id)
         {
-            var uredjaj = _uredjajService.GetById(id);
-            var model = new GetByIdViewModel(uredjaj);
-            return View(model);
+            UredjajInput uredjaj = null;
+            if (id.HasValue)
+            {
+                uredjaj = _uredjajService.GetById(id.Value);
+            }
+
+            return View(uredjaj);
         }
 
-        // POST api/<controller>
         [HttpGet]
         public IActionResult KreiranjeUredjaja()
         {
@@ -47,22 +44,35 @@ namespace KancelarijaBoilerplate.Web.Controllers
         [HttpPost]
         public IActionResult KreiranjeUredjaja(UredjajInput input)
         {
-            
-           _uredjajService.Create(input);
+
+            _uredjajService.Create(input);
             //var stringValues = Request.Form[input.Name];
             return RedirectToAction("GetAll");
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]Models.Uredjaj value)
+        [HttpGet]
+        public IActionResult Edit()
         {
-            _uredjajService.Update(id, value);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, UredjajEditDto input)
+        {
+            _uredjajService.Update(id, input);
+            return RedirectToAction("GetAll");
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        [HttpGet]
+        public IActionResult Delete()
         {
-            _uredjajService.Remove(id);
+            return View();
         }
+
+        public IActionResult Delete(UredjajDeleteDto input)
+        {
+            _uredjajService.Remove(input);
+            return RedirectToAction("GetAll");
+        }
+
     }
 }

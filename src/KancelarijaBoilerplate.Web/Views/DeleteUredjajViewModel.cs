@@ -6,11 +6,11 @@ using KancelarijaBoilerplate.Uredjaj.Dto;
 
 namespace KancelarijaBoilerplate.Web.Views
 {
-    public class CreateUredjajViewModel
+    public class DeleteUredjajViewModel
     {
         public UredjajInput Uredjaj { get; set; }
 
-        public CreateUredjajViewModel(UredjajInput uredjaj)
+        public DeleteUredjajViewModel(UredjajInput uredjaj)
         {
             Uredjaj = uredjaj;
         }

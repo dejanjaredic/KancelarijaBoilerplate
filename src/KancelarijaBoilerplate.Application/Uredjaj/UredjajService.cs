@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
+﻿using System.Collections.Generic;
 using Abp.Domain.Repositories;
 using Abp.UI;
-using AutoMapper;
-using KancelarijaBoilerplate.Models;
-using KancelarijaBoilerplate.Uredjaj;
 using KancelarijaBoilerplate.Uredjaj.Dto;
 
 namespace KancelarijaBoilerplate.Uredjaj
@@ -19,6 +13,8 @@ namespace KancelarijaBoilerplate.Uredjaj
         {
             _uredjajRepository = uredjajRepository;
         }
+
+
         public void Create(UredjajInput input)
         {
             var uredjaj = _uredjajRepository.FirstOrDefault(x => x.Id == input.Id);
@@ -30,24 +26,22 @@ namespace KancelarijaBoilerplate.Uredjaj
 
         }
 
-        public void Remove(int id)
+        public void Remove(UredjajDeleteDto input)
         {
-            var uredjaj = _uredjajRepository.FirstOrDefault(x => x.Id == id);
-            if (uredjaj != null)
-            {
-                throw new UserFriendlyException("Nepostojeci uredjaj");
-            }
-            _uredjajRepository.Delete(uredjaj);
+            var uredjaj = _uredjajRepository.Get(input.Id);
+            _uredjajRepository.Delete(ObjectMapper.Map<Models.Uredjaj>(uredjaj));
         }
 
-        public void Update(int id, Models.Uredjaj input)
-        {
+        public void Update(int id, UredjajEditDto input)
+            {
             var uredjaj = _uredjajRepository.Get(id);
             if (uredjaj == null)
             {
                 throw new UserFriendlyException("Nepostojeci uredjaj");
             }
-            _uredjajRepository.Update(uredjaj);
+
+            ObjectMapper.Map(input, uredjaj);
+            
         }
 
         public List<UredjajInput> GetAll()
@@ -55,7 +49,7 @@ namespace KancelarijaBoilerplate.Uredjaj
             var uredjaji = _uredjajRepository.GetAll();
             return new List<UredjajInput>(ObjectMapper.Map<List<UredjajInput>>(uredjaji));
         }
-
+        
         public UredjajInput GetById(int id)
         {
             var uredjaj = _uredjajRepository.Get(id);

@@ -18,9 +18,7 @@
     <PackageReference Include="Abp.AutoMapper" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Kancelarija\Dto\" />
     <Folder Include="KoriscenjeUredjaja\Dto\" />
     <Folder Include="Osoba\Dto\" />
-    <Folder Include="Uredjaj\Dto\" />
   </ItemGroup>
 </Project>

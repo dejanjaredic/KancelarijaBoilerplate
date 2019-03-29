@@ -1,14 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Abp.Domain.Entities;
 
 namespace KancelarijaBoilerplate.Models
 {
-    public class KoriscenjeUredjaja
+    public class KoriscenjeUredjaja : Entity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public DateTime VrijemeOd { get; set; }
         public DateTime? VrijemeDo { get; set; }
 

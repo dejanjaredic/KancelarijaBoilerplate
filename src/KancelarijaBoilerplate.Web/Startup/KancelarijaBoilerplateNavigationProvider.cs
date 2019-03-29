@@ -42,7 +42,7 @@ namespace KancelarijaBoilerplate.Web.Startup
                     new MenuItemDefinition(
                         PageNames.GetById,
                         L("GetById"),
-                        url: "Uredjaj/GetById/1",
+                        url: "Uredjaj/GetById/",
                         icon: "fa fa-info"
                     )
                         ).AddItem(
@@ -52,9 +52,65 @@ namespace KancelarijaBoilerplate.Web.Startup
                         url: "Uredjaj/KreiranjeUredjaja",
                         icon: "fa fa-info"
                     )
+                        ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.Delete,
+                            L("Delete"),
+                            url: "Uredjaj/Delete/",
+                            icon: "fa fa-info"
+                    )
+                        ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.Edit,
+                            L("Edit"),
+                            url: "Uredjaj/Edit",
+                            icon: "fa fa-info"
                         )
-                        
-                );
+                        )
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Kancelarija,
+                        L("Kancelarija"),
+                        url: "Kancelarija/",
+                        icon: "fa fa-info"
+                    )
+                    .AddItem(
+                    new MenuItemDefinition(
+                        PageNames.KreirajKancelariju,
+                        L("KreirajKancelariju"),
+                        url: "Kancelarija/KreirajKancelariju",
+                        icon: "fa fa-info"
+                    )
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetAll,
+                        L("GetAll"),
+                        url: "Kancelarija/GetAll",
+                        icon: "fa fa-info"
+                        )
+                    ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.GetById,
+                                L("GetById"),
+                                url: "Kancelarija/GetById",
+                                icon: "fa fa-info"
+                            )
+                        ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.Delete,
+                                L("Delete"),
+                                url: "Kancelarija/Delete",
+                                icon: "fa fa-info"
+                            )
+                        ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.Edit,
+                                L("Edit"),
+                                url: "Kancelarija/Edit",
+                                icon: "fa fa-info"
+                            )
+                           )
+                    );
         }
 
         private static ILocalizableString L(string name)

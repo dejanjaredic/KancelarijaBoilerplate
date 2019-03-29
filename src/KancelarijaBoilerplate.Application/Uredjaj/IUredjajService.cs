@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Abp.Application.Services;
-using Abp.Dependency;
-using Abp.Domain.Repositories;
 using KancelarijaBoilerplate.Uredjaj.Dto;
 
 namespace KancelarijaBoilerplate.Uredjaj
@@ -11,8 +7,8 @@ namespace KancelarijaBoilerplate.Uredjaj
     public interface IUredjajService : IApplicationService
     {
         void Create(UredjajInput input);
-        void Remove(int id);
-        void Update(int id, Models.Uredjaj input);
+        void Remove(UredjajDeleteDto id);
+        void Update(int id, UredjajEditDto input);
         List<UredjajInput> GetAll();
         UredjajInput GetById(int id);
     }
