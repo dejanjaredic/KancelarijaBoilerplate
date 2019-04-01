@@ -1,0 +1,21 @@
+﻿@model KancelarijaBoilerplate.Osoba.OsobaOutpot
+@{
+    ViewData["Title"] = "GetOsobaById";
+}
+
+<h2>GetOsobaById</h2>
+
+
+
+@if (Model == null)
+{
+    <form action="" method="get">
+        <label>Id</label>
+        <input type="text" name="id" />&nbsp;<input type="submit" />
+    </form>
+}
+else
+{
+    @Html.TextBoxFor(x => x.Ime) <br />@Html.TextBoxFor(x => x.Prezime) <br /> @Html.TextBoxFor(x => x.Kancelarija.Opis)
+}
+

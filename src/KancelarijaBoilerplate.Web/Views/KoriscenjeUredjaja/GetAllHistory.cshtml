@@ -1,0 +1,25 @@
+﻿@model KancelarijaBoilerplate.Web.Views.KoriscenjeUredjajaModel
+@{
+    ViewData["Title"] = "GetAllHistory";
+}
+
+<h2>GetAllHistory</h2>
+<table border="1" style="padding: 2px">
+<tr>
+<th>Vrijeme Od</th>
+<th>Vrijeme Do</th>
+<th>Ime i Prezime</th>
+<th>Ime Uredjaja</th>
+<tr>
+@foreach (var k in Model.KoriscenjeUredjaja)
+{
+
+    <tr>
+        <td> @k.VrijemeOd </td>
+        <td> @k.VrijemeDo </td>
+        <td> @k.Osoba.Ime @k.Osoba.Prezime </td>
+        <td> @k.Uredjaj.Name </td>
+    </tr>
+
+}
+</table>

@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using KancelarijaBoilerplate.Osoba.Dto;
 
 namespace KancelarijaBoilerplate.Osoba
 {
     public interface IOsobaAppService : IApplicationService
     {
         void Add(OsobaInput input);
-        IEnumerable<OsobaOutpot> GetAll();
+        List<OsobaOutpot> GetAll();
         OsobaOutpot GetById(int id);
-        void Delete(int id);
+        void Delete(OssobaDeleteDto input);
 
         void Edit(int id, OsobaInput input);
     }

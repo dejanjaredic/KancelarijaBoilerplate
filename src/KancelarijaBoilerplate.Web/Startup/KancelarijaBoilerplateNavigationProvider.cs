@@ -13,13 +13,6 @@ namespace KancelarijaBoilerplate.Web.Startup
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        PageNames.Home,
-                        L("HomePage"),
-                        url: "",
-                        icon: "fa fa-home"
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
                         PageNames.About,
                         L("About"),
                         url: "Home/About",
@@ -110,7 +103,72 @@ namespace KancelarijaBoilerplate.Web.Startup
                                 icon: "fa fa-info"
                             )
                            )
-                    );
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Osoba,
+                        L("Osoba"),
+                        url: "Osoba",
+                        icon: "fa fa-info"
+                    
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetAllOsoba,
+                        L("GetAllOsoba"),
+                        url: "Osoba/GetAllOsoba",
+                        icon: "fa fa-info"
+                    )
+                ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.GetOsobaById,
+                            L("GetOsobaById"),
+                            url: "Osoba/GetOsobaById",
+                            icon: "fa fa-info"
+                        )
+                        ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.DeleteOsoba,
+                            L("DeleteOsoba"),
+                            url: "Osoba/DeleteOsoba",
+                            icon: "fa fa-info"
+                        )
+                    ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.AddOsoba,
+                            L("AddOsoba"),
+                            url: "Osoba/AddOsoba",
+                            icon: "fa fa-info"
+                        )
+                    ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.EditOsoba,
+                            L("EditOsoba"),
+                            url: "Osoba/EditOsoba",
+                            icon: "fa fa-info"
+                        )
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.KoriscenjeUredjaja,
+                        L("KoriscenjeUredjaja"),
+                        url: "KoriscenjeUredjaja",
+                        icon: "fa fa-info"
+                    )
+                .AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetAllHistory,
+                        L("GetAllHistory"),
+                        url: "KoriscenjeUredjaja/GetAllHistory",
+                        icon: "fa fa-info"
+                    )
+                ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.CreateHistory,
+                                L("CreateHistory"),
+                                url: "KoriscenjeUredjaja/CreateHistory",
+                                icon: "fa fa-info"
+                            )
+                        )
+                );
         }
 
         private static ILocalizableString L(string name)

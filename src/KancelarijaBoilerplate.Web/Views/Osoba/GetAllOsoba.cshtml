@@ -1,0 +1,15 @@
+﻿@model KancelarijaBoilerplate.Web.Views.OsobeGetAllModel
+@{
+    ViewData["Title"] = "GetAllOsoba";
+}
+
+<h2>GetAllOsoba</h2>
+
+@foreach (var o in Model.Osoba)
+{
+
+    <ul>
+        <li>Ime i Prezime: @o.Ime @o.Prezime</li>
+        <li>kancelarija: @o.Kancelarija.Opis</li>
+    </ul>
+}

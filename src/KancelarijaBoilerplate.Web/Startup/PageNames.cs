@@ -12,5 +12,14 @@
         public const string Edit = "Edit";
         public const string Kancelarija = "Kancelarija";
         public const string KreirajKancelariju = "KreirajKancelariju";
+        public const string Osoba = "Osoba";
+        public const string GetAllOsoba = "GetAllOsoba";
+        public const string GetOsobaById = "GetOsobaById";
+        public const string DeleteOsoba = "DeleteOsoba";
+        public const string AddOsoba = "AddOsoba";
+        public const string EditOsoba = "EditOsoba";
+        public const string GetAllHistory = "GetAllHistory";
+        public const string KoriscenjeUredjaja = "KoriscenjeUredjaja";
+        public const string CreateHistory = "CreateHistory";
     }
 }
