@@ -51,21 +51,20 @@ namespace KancelarijaBoilerplate.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var uredjaj = _uredjajService.GetById(id);
+            UredjajEditDto noviUredjaj = new UredjajEditDto();
+            noviUredjaj.Id = uredjaj.Id;
+            noviUredjaj.Name = uredjaj.Name;
+
+            return View(noviUredjaj);
         }
         [HttpPost]
         public IActionResult Edit(int id, UredjajEditDto input)
         {
             _uredjajService.Update(id, input);
             return RedirectToAction("GetAll");
-        }
-
-        [HttpGet]
-        public IActionResult Delete()
-        {
-            return View();
         }
 
         public IActionResult Delete(UredjajDeleteDto input)

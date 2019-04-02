@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 
 namespace KancelarijaBoilerplate.KoriscenjeUredjaja
 {
     [AutoMap(typeof(Models.Uredjaj))]
-    public class KoriscenjeUredjajaOutput
+    public class KoriscenjeUredjajaOutput : EntityDto
     {
         public DateTime VrijemeOd { get; set; }
         public DateTime? VrijemeDo { get; set; }

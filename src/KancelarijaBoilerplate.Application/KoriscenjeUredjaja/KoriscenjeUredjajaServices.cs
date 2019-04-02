@@ -54,10 +54,6 @@ namespace KancelarijaBoilerplate.KoriscenjeUredjaja
         public void Delete(KoriscenjeUredjajaDelete input)
         {
             var koriscenUredjaj = _koriscenjeUredjajaService.Get(input.Id);
-            if (koriscenUredjaj == null)
-            {
-                throw new UserFriendlyException("Uredjaj  se ne koristi");
-            }
             _koriscenjeUredjajaService.Delete(ObjectMapper.Map<Models.KoriscenjeUredjaja>(koriscenUredjaj));
         }
 
@@ -69,7 +65,9 @@ namespace KancelarijaBoilerplate.KoriscenjeUredjaja
 
         public KoriscenjeUredjajaOutput GetById(int id)
         {
-            var koriscenUredjaj = _koriscenjeUredjajaService.Get(id);
+            var korisceniUredjaji = _koriscenjeUredjajaService.GetAll().Include(x => x.Uredjaj).Include(x => x.Osoba);
+
+            var koriscenUredjaj = korisceniUredjaji.FirstOrDefault(x => x.Id == id);
             return ObjectMapper.Map<KoriscenjeUredjajaOutput>(koriscenUredjaj);
         }
     }

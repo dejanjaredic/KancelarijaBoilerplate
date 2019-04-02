@@ -21,5 +21,7 @@
         public const string GetAllHistory = "GetAllHistory";
         public const string KoriscenjeUredjaja = "KoriscenjeUredjaja";
         public const string CreateHistory = "CreateHistory";
+        public const string GetHistoryById = "GetHistoryById";
+        public const string DeleteHistory = "DeleteHistory";
     }
 }

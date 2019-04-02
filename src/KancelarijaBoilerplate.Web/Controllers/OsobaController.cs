@@ -2,25 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KancelarijaBoilerplate.Kancelarija;
 using KancelarijaBoilerplate.Osoba;
 using KancelarijaBoilerplate.Osoba.Dto;
+using KancelarijaBoilerplate.Web.Dto;
 using KancelarijaBoilerplate.Web.Views;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace KancelarijaBoilerplate.Web.Controllers
 {
     public class OsobaController : KancelarijaBoilerplateControllerBase
     {
         private readonly IOsobaAppService _osobaService;
+        private readonly IKancelarijaService _kancelarijaService;
 
-        public OsobaController(IOsobaAppService osobaService)
+        public OsobaController(IOsobaAppService osobaService, IKancelarijaService kancelarijaService)
         {
             _osobaService = osobaService;
+            _kancelarijaService = kancelarijaService;
         }
 
-        public IActionResult Index()
+        public SelectList KancelarijaDropdown()
         {
-            return View();
+            var kancelarijaDropdown = new DropdownKancelarijaDto(_kancelarijaService);
+
+            var kancelarije = kancelarijaDropdown.Kancelarija.ToList();
+            SelectList selectList = new SelectList(kancelarije, "Id", "Opis");
+            return selectList;
         }
 
         public IActionResult GetAllOsoba()
@@ -43,13 +52,6 @@ namespace KancelarijaBoilerplate.Web.Controllers
             return View(osoba);
         }
 
-        [HttpGet]
-        public IActionResult DeleteOsoba()
-        {
-            return View();
-        }
-
-        
         public IActionResult DeleteOsoba(OssobaDeleteDto input)
         {
             _osobaService.Delete(input);
@@ -58,8 +60,11 @@ namespace KancelarijaBoilerplate.Web.Controllers
         [HttpGet]
         public IActionResult AddOsoba()
         {
-            return View();
+            var kancelarije = KancelarijaDropdown();
+            ViewData["DropDown"] = kancelarije;
+            return View(new OsobaInput());
         }
+
 
         public IActionResult AddOsoba(OsobaInput input)
         {
@@ -68,11 +73,19 @@ namespace KancelarijaBoilerplate.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditOsoba()
+        public IActionResult EditOsoba(int id)
         {
-            return View();
+            var osoba = _osobaService.GetById(id);
+            OsobaInput promjenjenaOsoba = new OsobaInput();
+            promjenjenaOsoba.Ime = osoba.Ime;
+            promjenjenaOsoba.Prezime = osoba.Prezime;
+            promjenjenaOsoba.KancelarijaId = osoba.Kancelarija.Id;
+            //promjenjenaOsoba.Kancelarija.Opis = osoba.Kancelarija.Opis;
+            return View(promjenjenaOsoba);
         }
+
         
+
         [HttpPost]
         public IActionResult EditOsoba(int id, OsobaInput input)
         {

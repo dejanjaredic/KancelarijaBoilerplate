@@ -41,5 +41,24 @@ namespace KancelarijaBoilerplate.Web.Controllers
             _koriscenjeUredjajaService.Create(input);
             return RedirectToAction("GetAllHistory");
         }
+
+        [HttpGet]
+        public IActionResult GetHistoryById(int? id)
+        {
+            KoriscenjeUredjajaOutput koriscenje = null;
+            if (id.HasValue)
+            {
+                koriscenje = _koriscenjeUredjajaService.GetById(id.Value);
+            }
+            
+            return View(koriscenje);
+        }
+
+        
+        public IActionResult DeleteHistory(KoriscenjeUredjajaDelete input)
+        {
+            _koriscenjeUredjajaService.Delete(input);
+            return RedirectToAction("GetAllHistory");
+        }
     }
 }

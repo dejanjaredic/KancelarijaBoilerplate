@@ -3,7 +3,7 @@
     ViewData["Title"] = "GetAllOsoba";
 }
 
-<h2>GetAllOsoba</h2>
+<h4>GetAllOsoba</h4>
 
 @foreach (var o in Model.Osoba)
 {
@@ -11,5 +11,6 @@
     <ul>
         <li>Ime i Prezime: @o.Ime @o.Prezime</li>
         <li>kancelarija: @o.Kancelarija.Opis</li>
+        <li><a href="DeleteOsoba/@o.Id"> Delete </a> &nbsp <a href="EditOsoba/@o.Id" > Edit </a></li>
     </ul>
 }

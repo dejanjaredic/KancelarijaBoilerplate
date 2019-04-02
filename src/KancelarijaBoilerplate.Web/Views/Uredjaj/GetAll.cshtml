@@ -7,10 +7,24 @@
 }
 
 @ViewData["Title"]
+<table border="1">
+    <tr>
+        <th colspan="3"> Lista svih Uredjaja </th>
 
-@foreach (var ure in Model.Uredjaj)
-{
-<br />@ure.Name
+    <tr>
+        <th> Ime Uredjaja </th>
+        <th> Delete </th>
+        <th> Edit </th>
+    </tr>
 
-}
 
+    @foreach (var ure in Model.Uredjaj)
+    {
+        <tr>
+            <td> @ure.Name </td>
+            <td> <a onclick="return confirm('Are you sure you want to delete this?')" href="Delete/@ure.Id" class="deleteBtn">Delete</a> </td>
+            <td> <a href="Edit/@ure.Id" class="editBtn">Edit</a> </td>
+        </tr>
+    }
+
+</table>

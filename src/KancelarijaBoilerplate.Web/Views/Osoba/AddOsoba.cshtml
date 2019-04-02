@@ -1,16 +1,17 @@
 ﻿@model KancelarijaBoilerplate.Osoba.OsobaInput
 @{
     ViewData["Title"] = "AddOsoba";
+    var list = ViewBag.DropDown as SelectList;
 }
 
 <h2>AddOsoba</h2>
 
 <form action="" method="post">
-    <label>Name</label>
+    <label>Name</label><br/>
     <input type="text" name="ime" placeholder="Person Name"/><br/>
-    <label>Surname</label>
+    <label>Surname</label><br />
     <input type="text" name="prezime" placeholder="Surame"/><br/>
-    <label>Office</label>
-    <input type="text" name="kancelarijaid" placeholder="Office Description"/><br/>
+    <label>Office</label><br />
+    @Html.DropDownListFor(x => x.KancelarijaId, list, "Kancelarija")
     <input type="submit" value="Save"/>
 </form>

@@ -1,11 +1,25 @@
-﻿@model KancelarijaBoilerplate.Web.Views.KancelarijaGetAllModel
-@{
-    ViewData["Title"] = "GetAll";
-}
+﻿@using KancelarijaBoilerplate.Web.Startup
+@model KancelarijaBoilerplate.Web.Views.KancelarijaGetAllModel
 
-<h2>GetAll</h2>
 
-@foreach (var kancelarija in Model.Kancelarija)
-{
-    <br /> @kancelarija.Opis
-}
+<table border="1">
+    <tr>
+    <th colspan="3"> Lista svih Uredjaja </th>
+
+    <tr>
+    <tr>
+        <th>Kancelarija</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+
+    @foreach (var kancelarija in Model.Kancelarija)
+    {
+        <tr>
+            <td>@kancelarija.Opis</td>
+            <td><a onclick="return confirm('Are you sure you want to delete this?')" href="Delete/@kancelarija.Id" class="deleteBtn">Delete</a></td>
+            <td><a href="Edit/@kancelarija.Id" class="editBtn">Edit</a></td>
+        </tr>
+    }
+
+</table>

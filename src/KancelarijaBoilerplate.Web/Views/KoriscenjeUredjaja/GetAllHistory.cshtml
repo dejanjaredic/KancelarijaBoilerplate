@@ -3,23 +3,31 @@
     ViewData["Title"] = "GetAllHistory";
 }
 
-<h2>GetAllHistory</h2>
-<table border="1" style="padding: 2px">
-<tr>
-<th>Vrijeme Od</th>
-<th>Vrijeme Do</th>
-<th>Ime i Prezime</th>
-<th>Ime Uredjaja</th>
-<tr>
-@foreach (var k in Model.KoriscenjeUredjaja)
-{
 
+<table border="1" class="korisceniUredjajiTable">
     <tr>
-        <td> @k.VrijemeOd </td>
-        <td> @k.VrijemeDo </td>
-        <td> @k.Osoba.Ime @k.Osoba.Prezime </td>
-        <td> @k.Uredjaj.Name </td>
+        <th colspan="4">Koriscenje Uredjaja</th>
+        <th colspan="2">Operacije</th>
     </tr>
+    <tr>
+    <th>Vrijeme Od</th>
+    <th>Vrijeme Do</th>
+    <th>Ime i Prezime</th>
+    <th>Ime Uredjaja</th>
+    <th>Delete</th>
+    <th>Edit</th>
+    <tr>
+    @foreach (var k in Model.KoriscenjeUredjaja)
+    {
 
-}
+        <tr>
+            <td> @k.VrijemeOd </td>
+            <td> @k.VrijemeDo </td>
+            <td> @k.Osoba.Ime @k.Osoba.Prezime </td>
+            <td> @k.Uredjaj.Name </td>
+            <td> <a href="DeleteHistory/@k.Id">Delete</a> </td>
+            <td> <a href="#">Edit</a> </td>
+        </tr>
+
+    }
 </table>

@@ -44,23 +44,22 @@ namespace KancelarijaBoilerplate.Web.Controllers
             return View(kancelarija);
         }
 
-        [HttpGet]
-        public IActionResult Delete()
-        {
-            return View();
-        }
-
         public IActionResult Delete(KancelarijaDeleteDto input)
         {
             _kancelarijaService.Remove(input);
             return RedirectToAction("GetAll");
         }
-        [HttpGet]
-        public IActionResult Edit()
-        {
-            return View();
-        }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var kancelarija = _kancelarijaService.GetById(id);
+            KancelarijaEditDto izmijenjenaKancelarija = new KancelarijaEditDto();
+            izmijenjenaKancelarija.Id = kancelarija.Id;
+            izmijenjenaKancelarija.Opis = kancelarija.Opis;
+            return View(izmijenjenaKancelarija);
+        }
+        [HttpPost]
         public IActionResult Edit(int id, KancelarijaEditDto input)
         {
             _kancelarijaService.Update(id, input);

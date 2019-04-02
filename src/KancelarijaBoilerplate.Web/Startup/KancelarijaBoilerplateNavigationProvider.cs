@@ -45,20 +45,6 @@ namespace KancelarijaBoilerplate.Web.Startup
                         url: "Uredjaj/KreiranjeUredjaja",
                         icon: "fa fa-info"
                     )
-                        ).AddItem(
-                        new MenuItemDefinition(
-                            PageNames.Delete,
-                            L("Delete"),
-                            url: "Uredjaj/Delete/",
-                            icon: "fa fa-info"
-                    )
-                        ).AddItem(
-                        new MenuItemDefinition(
-                            PageNames.Edit,
-                            L("Edit"),
-                            url: "Uredjaj/Edit",
-                            icon: "fa fa-info"
-                        )
                         )
                     ).AddItem(
                     new MenuItemDefinition(
@@ -88,21 +74,7 @@ namespace KancelarijaBoilerplate.Web.Startup
                                 url: "Kancelarija/GetById",
                                 icon: "fa fa-info"
                             )
-                        ).AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Delete,
-                                L("Delete"),
-                                url: "Kancelarija/Delete",
-                                icon: "fa fa-info"
-                            )
-                        ).AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Edit,
-                                L("Edit"),
-                                url: "Kancelarija/Edit",
-                                icon: "fa fa-info"
-                            )
-                           )
+                        )
                     ).AddItem(
                     new MenuItemDefinition(
                         PageNames.Osoba,
@@ -126,23 +98,9 @@ namespace KancelarijaBoilerplate.Web.Startup
                         )
                         ).AddItem(
                         new MenuItemDefinition(
-                            PageNames.DeleteOsoba,
-                            L("DeleteOsoba"),
-                            url: "Osoba/DeleteOsoba",
-                            icon: "fa fa-info"
-                        )
-                    ).AddItem(
-                        new MenuItemDefinition(
                             PageNames.AddOsoba,
                             L("AddOsoba"),
                             url: "Osoba/AddOsoba",
-                            icon: "fa fa-info"
-                        )
-                    ).AddItem(
-                        new MenuItemDefinition(
-                            PageNames.EditOsoba,
-                            L("EditOsoba"),
-                            url: "Osoba/EditOsoba",
                             icon: "fa fa-info"
                         )
                     )
@@ -165,6 +123,20 @@ namespace KancelarijaBoilerplate.Web.Startup
                                 PageNames.CreateHistory,
                                 L("CreateHistory"),
                                 url: "KoriscenjeUredjaja/CreateHistory",
+                                icon: "fa fa-info"
+                            )
+                        ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.GetHistoryById,
+                                L("GetHistoryById"),
+                                url: "KoriscenjeUredjaja/GetHistoryById",
+                                icon: "fa fa-info"
+                            )
+                        ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.DeleteHistory,
+                                L("DeleteHistory"),
+                                url: "KoriscenjeUredjaja/DeleteHistory",
                                 icon: "fa fa-info"
                             )
                         )

@@ -1,0 +1,22 @@
+﻿@model KancelarijaBoilerplate.KoriscenjeUredjaja.KoriscenjeUredjajaOutput
+@{
+    ViewData["Title"] = "GetHistoryById";
+}
+
+<h2>GetHistoryById</h2>
+
+@if (Model == null)
+{
+    <form action="" method="get">
+        <label> Id &nbsp; </label>
+        <input type="text" name="id" placeholder="Id" /> &nbsp; <input type="submit" value="Submit" />
+    </form>
+}
+else
+{
+    @Html.TextBoxFor(x => x.Osoba.Ime)
+    @Html.TextBoxFor(x => x.Osoba.Prezime)
+    @Html.TextBoxFor(x => x.Uredjaj.Name)
+    @Html.TextBoxFor(x => x.VrijemeOd)
+    @Html.TextBoxFor(x => x.VrijemeDo)
+}

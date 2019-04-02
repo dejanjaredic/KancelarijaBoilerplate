@@ -1,0 +1,29 @@
+﻿table{ margin: 0 auto; width: 200px; text-align: center;}
+th { text-align: center;}
+
+.deleteBtn {
+    padding: 3px;
+    border-radius: 1px;
+    background-color: #fa8072;
+    color: #ebebeb;
+    text-decoration: none;
+}
+.deleteBtn:hover{ color: #fff; text-decoration: none;}
+.editBtn {
+    background-color: #008000;
+    padding: 3px;
+    border-radius: 1px;
+    color: #ebebeb;
+    text-decoration: none;
+}
+.editBtn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.korisceniUredjajiTable {
+    width: 600px;
+}
+.korisceniUredjajiTable > tr > td:first-child {
+    background-color: #ebebeb;
+}
+
