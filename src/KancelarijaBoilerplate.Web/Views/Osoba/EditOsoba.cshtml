@@ -5,40 +5,15 @@
 }
 
 <h2>EditOsoba</h2>
-
-<form action="" method="post">
-    <table>
-        <tr>
-            <th>Property</th>
-            <th>Vrijednost</th>
-        </tr>
-        <tr>
-            <td><label>Id</label></td>
-            <td><input type="text" name="id" placeholder="Id" size="4" /></td>
-        </tr>
-        <tr>
-            <td><label>Name</label></td>
-            <td><input type="text" name="ime" placeholder="Name" /></td>
-        </tr>
-        <tr>
-            <td><label>Surname</label></td>
-            <td><input type="text" name="prezime" placeholder="Insert Surname" /></td>
-        </tr>
-        <tr>
-            <td><label>kancelarija Id</label></td>
-            <td>@Html.DropDownListFor(x => x.KancelarijaId, list, "Kancelarija")</td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Edit" /></td>
-        </tr>
-    </table>
-    
-    
-    
-    
-    
-   
-    
-    
-    
-</form>
+@if (Model != null)
+{
+    <form action="" method="post">
+        <label>Name</label><br />
+        <input type="text" name="ime" placeholder="Person Name"  value="@Model.Ime"/><br />
+        <label>Surname</label><br />
+        <input type="text" name="prezime" placeholder="Surame" value="@Model.Prezime"/><br />
+        <label>Office</label><br />
+        @Html.DropDownListFor(x => x.KancelarijaId, list, @Model.KancelarijaId)
+        <input type="submit" value="Save" />
+    </form>
+}

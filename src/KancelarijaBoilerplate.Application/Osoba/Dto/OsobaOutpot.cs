@@ -11,7 +11,7 @@ namespace KancelarijaBoilerplate.Osoba
     {
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        [ForeignKey("KancelarijaId")]
+        public int KancelarijaId { get; set; }
         public KancelarijaInput Kancelarija { get; set; }
     }
 }

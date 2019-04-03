@@ -132,13 +132,6 @@ namespace KancelarijaBoilerplate.Web.Startup
                                 url: "KoriscenjeUredjaja/GetHistoryById",
                                 icon: "fa fa-info"
                             )
-                        ).AddItem(
-                            new MenuItemDefinition(
-                                PageNames.DeleteHistory,
-                                L("DeleteHistory"),
-                                url: "KoriscenjeUredjaja/DeleteHistory",
-                                icon: "fa fa-info"
-                            )
                         )
                 );
         }

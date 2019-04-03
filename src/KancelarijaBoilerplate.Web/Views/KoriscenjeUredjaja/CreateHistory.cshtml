@@ -1,15 +1,16 @@
 ﻿@model KancelarijaBoilerplate.KoriscenjeUredjaja.Dto.KoriscenjeUredjajaInput
 @{
     ViewData["Title"] = "CreateHistory";
+    var list = ViewBag.OsobaDropdown as SelectList;
 }
 
 <h2>CreateHistory</h2>
 
 <form action="" method="post">
     <label>Device Id</label>
-    <input type="text" name="uredjajid" placeholder="Device Id"/><br/>
+    <input type="text" name="uredjajid" placeholder="Device Id" /><br />
     <label>Person Id</label>
-    <input type="text" name="osobaid" placeholder="Person Id"/><br />
-    <input type="submit" value="Create"/>
+    @Html.DropDownListFor(x => x.OsobaId, list, "Odaberi Osobu")<br />
+    <input type="submit" value="Create" />
 
 </form>

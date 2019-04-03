@@ -76,17 +76,19 @@ namespace KancelarijaBoilerplate.Web.Controllers
         public IActionResult EditOsoba(int id)
         {
             var osoba = _osobaService.GetById(id);
-            OsobaInput promjenjenaOsoba = new OsobaInput();
-            promjenjenaOsoba.Ime = osoba.Ime;
-            promjenjenaOsoba.Prezime = osoba.Prezime;
-            promjenjenaOsoba.KancelarijaId = osoba.Kancelarija.Id;
-            //promjenjenaOsoba.Kancelarija.Opis = osoba.Kancelarija.Opis;
-            return View(promjenjenaOsoba);
+            OsobaInput novaOsoba = new OsobaInput();
+            novaOsoba.Ime = osoba.Ime;
+            novaOsoba.Prezime = osoba.Prezime;
+            novaOsoba.KancelarijaId = osoba.KancelarijaId;
+
+            var kancelarije = KancelarijaDropdown();
+            ViewData["DropDown"] = kancelarije;
+            return View(novaOsoba);
         }
 
         
 
-        [HttpPost]
+        
         public IActionResult EditOsoba(int id, OsobaInput input)
         {
             _osobaService.Edit(id, input);
