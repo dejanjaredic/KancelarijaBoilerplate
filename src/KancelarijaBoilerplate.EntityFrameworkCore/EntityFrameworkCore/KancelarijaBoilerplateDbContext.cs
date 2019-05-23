@@ -17,5 +17,13 @@ namespace KancelarijaBoilerplate.EntityFrameworkCore
         public DbSet<Osoba> Osobe { get; set; }
         public DbSet<Uredjaj> Uredjaji { get; set; }
         public DbSet<KoriscenjeUredjaja> KorisceniUredjaji { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Blog>()
+                .HasKey(c => new { c.Id, c.Lancode });
+            modelBuilder.Entity<Blog>().Property(x => x.Id).ValueGeneratedOnAdd();
+        }
     }
 }

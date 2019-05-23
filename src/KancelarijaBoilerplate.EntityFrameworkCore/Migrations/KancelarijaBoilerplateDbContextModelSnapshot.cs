@@ -19,6 +19,23 @@ namespace KancelarijaBoilerplate.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("KancelarijaBoilerplate.Models.Blog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Lancode");
+
+                    b.Property<string>("Person");
+
+                    b.Property<string>("Post");
+
+                    b.HasKey("Id", "Lancode");
+
+                    b.ToTable("Blogs");
+                });
+
             modelBuilder.Entity("KancelarijaBoilerplate.Models.Kancelarija", b =>
                 {
                     b.Property<int>("Id")
@@ -53,6 +70,23 @@ namespace KancelarijaBoilerplate.Migrations
                     b.HasIndex("UredjajId");
 
                     b.ToTable("KorisceniUredjaji");
+                });
+
+            modelBuilder.Entity("KancelarijaBoilerplate.Models.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Flag");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Prefix");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
                 });
 
             modelBuilder.Entity("KancelarijaBoilerplate.Models.Osoba", b =>

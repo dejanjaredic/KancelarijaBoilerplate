@@ -133,7 +133,28 @@ namespace KancelarijaBoilerplate.Web.Startup
                                 icon: "fa fa-info"
                             )
                         )
-                );
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.AddLanguage,
+                        L("AddLanguage"),
+                        url:"Language/AddLanguage",
+                        icon: "fa fa-info"
+                        )
+                    ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.AddBlog,
+                        L("AddBlog"),
+                        url: "Blog/AddBlog",
+                        icon: "fa fa-info"
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.GetAll,
+                        L("GetAll"),
+                        url: "Blog/GetAll",
+                        icon: "fa fa-info"
+                        )
+                    );
         }
 
         private static ILocalizableString L(string name)

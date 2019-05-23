@@ -15,10 +15,17 @@
     <RootNamespace>KancelarijaBoilerplate</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20190523093813_BlogAndLanguageModelAddedMultipleKey.cs" />
+    <Compile Remove="Migrations\20190523094259_BlogAndLanguageModelAddedMultipleKey.cs" />
+    <Compile Remove="Migrations\20190523095456_FirstMigration.cs" />
+    <Compile Remove="Migrations\20190523120239_AutoincrementIdOnBlog.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\KancelarijaBoilerplate.Core\KancelarijaBoilerplate.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp.EntityFrameworkCore" Version="4.3.0" />
+    <PackageReference Include="Abp.ZeroCore.IdentityServer4.EntityFrameworkCore" Version="4.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />

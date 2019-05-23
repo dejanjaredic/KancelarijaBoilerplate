@@ -4,10 +4,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace KancelarijaBoilerplate.Migrations
 {
-    public partial class KancelarijaBoilerplateFirstMigration : Migration
+    public partial class AutoincrementIdOnBlog : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Blogs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Lancode = table.Column<string>(nullable: false),
+                    Person = table.Column<string>(nullable: true),
+                    Post = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Blogs", x => new { x.Id, x.Lancode });
+                });
+
             migrationBuilder.CreateTable(
                 name: "Kancelarije",
                 columns: table => new
@@ -19,6 +34,21 @@ namespace KancelarijaBoilerplate.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Kancelarije", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Languages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Prefix = table.Column<string>(nullable: true),
+                    Flag = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Languages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -102,7 +132,13 @@ namespace KancelarijaBoilerplate.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Blogs");
+
+            migrationBuilder.DropTable(
                 name: "KorisceniUredjaji");
+
+            migrationBuilder.DropTable(
+                name: "Languages");
 
             migrationBuilder.DropTable(
                 name: "Osobe");

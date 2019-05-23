@@ -1,0 +1,16 @@
+{
+  "culture": "sr",
+  "texts": {
+    "HelloWorld": "Mislim dakle postojim",
+    "ChangeLanguage": "Promijeni ezik",
+    "HomePage": "Naslovna",
+    "About": "O nama",
+    "Uredjaj": "Uredjaj",
+    "Kancelarija": "Kancelarija",
+    "Osoba": "Osoba",
+    "KoriscenjeUredjaja" : "Koriscenje Uredjaja",
+    "Home_Description": "Sto ti treba KancelarijaBoilerplate...",
+    "About_Description": "primjer startup projekta za koriscenje  ASP.NET Core with ABP framework.",
+    "My_Example": "Moje cijenjeno Ime je Dejan i ovo je primjer Boilerplatea"
+  }
+}

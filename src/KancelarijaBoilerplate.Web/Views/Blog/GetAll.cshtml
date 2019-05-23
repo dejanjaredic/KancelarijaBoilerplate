@@ -1,0 +1,33 @@
+﻿@model KancelarijaBoilerplate.Web.Views.BlogGetAllModel
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h2>GetAll</h2>
+<table border="1">
+    <tr>
+        <th colspan="6"> Lista Blogova </th>
+
+    <tr>
+    <tr>
+        <th>Person</th>
+        <th>Post</th>
+        <th>Language</th>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>Translate</th>
+    </tr>
+
+    @foreach (var blog in Model.Blog)
+    {
+        <tr>
+            <td>@blog.Person</td>
+            <td>@blog.Post</td>
+            <td>@blog.Lancode</td>
+            <td><a onclick="return confirm('Are you sure you want to delete this?')" href="Delete/@blog.Id" class="deleteBtn">Delete</a></td>
+            <td><a href="Edit/@blog.Id" class="editBtn">Edit</a></td>
+            <td><a href="Translate/@blog.Id" class="translateBtn">Translate</a></td>
+        </tr>
+    }
+
+</table>

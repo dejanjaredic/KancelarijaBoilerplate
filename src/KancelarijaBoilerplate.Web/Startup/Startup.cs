@@ -52,6 +52,12 @@ namespace KancelarijaBoilerplate.Web.Startup
                 app.UseExceptionHandler("/Error");
             }
 
+
+            //...authentication middleware(s)
+            // after authentication middleware(s) Otherwise, the localization middleware does not know the current user to determine the best language.
+            app.UseAbpRequestLocalization(); //manually add request localization
+
+
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {

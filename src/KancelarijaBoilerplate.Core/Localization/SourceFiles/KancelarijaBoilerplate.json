@@ -5,7 +5,12 @@
     "ChangeLanguage": "Change language",
     "HomePage": "HomePage",
     "About": "About",
+    "Uredjaj": "Device",
+    "Kancelarija": "Office",
+    "Osoba": "Person",
+    "KoriscenjeUredjaja": "Device Usage",
     "Home_Description": "Welcome to KancelarijaBoilerplate...",
-    "About_Description": "This is a simple startup template to use ASP.NET Core with ABP framework."
+    "About_Description": "This is a simple startup template to use ASP.NET Core with ABP framework.",
+    "My_Example": "My Name Is Dejan And This is a Boilerplate Example"
   }
 }

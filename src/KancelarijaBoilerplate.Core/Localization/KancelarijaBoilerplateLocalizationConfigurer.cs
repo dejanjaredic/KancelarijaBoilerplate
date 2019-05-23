@@ -12,7 +12,7 @@ namespace KancelarijaBoilerplate.Localization
         public static void Configure(ILocalizationConfiguration localizationConfiguration)
         {
             localizationConfiguration.Languages.Add(new LanguageInfo("en", "English", "famfamfam-flags england", isDefault: true));
-            localizationConfiguration.Languages.Add(new LanguageInfo("tr", "Türkçe", "famfamfam-flags tr"));
+            localizationConfiguration.Languages.Add(new LanguageInfo("sr", "Montenegro", "famfamfam-flags me"));
 
             localizationConfiguration.Sources.Add(
                 new DictionaryBasedLocalizationSource(KancelarijaBoilerplateConsts.LocalizationSourceName,

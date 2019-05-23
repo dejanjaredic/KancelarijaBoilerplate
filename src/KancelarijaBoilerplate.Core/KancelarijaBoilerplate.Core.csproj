@@ -11,7 +11,11 @@
     <RootNamespace>KancelarijaBoilerplate</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Localization\SourceFiles\*.json" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <EmbeddedResource Include="Localization\SourceFiles\KancelarijaBoilerplate-sr.json" />
+    <EmbeddedResource Include="Localization\SourceFiles\KancelarijaBoilerplate.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Localization\SourceFiles\KancelarijaBoilerplate-sr.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp" Version="4.3.0" />

@@ -1,0 +1,19 @@
+﻿@model KancelarijaBoilerplate.Blog.BlogDto
+@{
+    ViewData["Title"] = "Translate";
+}
+
+<h2>Translate</h2>
+
+<p>Translate View</p>
+
+<hr/>
+<br>
+
+<form action="" method="post">
+    <input type="text" name="person" placeholder="Person" value="@Model.Person"/><br />
+    <textarea name="post" placeholder="Post" >@Model.Post</textarea><br />
+    <input type="submit" value="Save" />
+</form>
+
+

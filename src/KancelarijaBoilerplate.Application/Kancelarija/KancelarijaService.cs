@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Abp.Domain.Repositories;
 using Abp.UI;
-using AutoMapper.QueryableExtensions;
 
 namespace KancelarijaBoilerplate.Kancelarija
 {
